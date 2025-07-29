@@ -68,3 +68,12 @@ for name, characteristic in animals_dictionary_zipped.items():
 
 for animal in class_animals:
     print(animal.characteristic, animal.name)
+
+for i, char in enumerate('abcde'):
+    print (i, char)
+
+for i, char in enumerate('abcde', 4):
+    print (i, char)
+
+for a, b in zip(range(4, 10, 2), 'abc'):
+    print(a, b)

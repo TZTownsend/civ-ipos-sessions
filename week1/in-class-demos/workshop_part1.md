@@ -13,6 +13,9 @@ print(crazy_list[3][1][2][0])
 
 Think of an answer before you run the code. When you think you know - run the code!
 
+```tt answer: h```
+```actual answer: hello```
+
 ## Lists and Tuples
 
 Create a list representing a pack of animals:

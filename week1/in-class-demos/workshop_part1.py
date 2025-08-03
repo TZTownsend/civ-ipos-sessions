@@ -21,11 +21,17 @@ try:
 except ValueError:
     print('No value found')
 
+#  pythonic solution
+print('"animals_list" contains Zebra:', "Zebra" in animals_list)
+
 
 try:
     print(f'"animals_list" second element is Giraffe: {animals_list[1] == "Giraffe"}')
 except ValueError:
     print('No value found')
+
+#  more pythonic solution
+print('"animals_list" second element is Giraffe:', animals_list[1] == "Giraffe")
 
 
 animals_list.append("Zebra")
@@ -39,11 +45,34 @@ animals_tuple = tuple(animals_list)
 # animals.append('Bear') cannot append to tuples
 
 animals_dictionary = {'Lion': 'Brave', 'Tiger': 'Fierce', 'Elephant': 'Large', 'Giraffe': 'Tall', 'Zebra': 'Striped'}
-print(animals_dictionary)
+print(f"{animals_dictionary=}")
 animals_dictionary['Lion'] = 'King'
+animals_dictionary_names_1 = []
+animals_dictionary_characteristics_1 = []
+for name, characteristic in animals_dictionary.items():
+    animals_dictionary_names_1.append(name)
+    animals_dictionary_characteristics_1.append(characteristic)
+print(f"{animals_dictionary_names_1=}")
+print(f"{animals_dictionary_characteristics_1=}")
+# more pythonic
+animal_names_2 = [name for name in animals_dictionary]
+animal_characteristics_2 = [value for value in animals_dictionary.values()]
+print(f"{animal_names_2=}")
+print(f"{animal_characteristics_2=}")
+
+new_animal_dictionary_1 = {}
+for name, characteristic in zip(animal_names_2, animal_characteristics_2):
+    new_animal_dictionary_1[name] = characteristic
+print(f"{new_animal_dictionary_1=}")
+
+# more pythonic
+new_animal_dictionary_2 = {name: characteristic for name, characteristic in zip(animals_dictionary_names_1, animals_dictionary_characteristics_1)}
+print(f"{new_animal_dictionary_2=}")
+
+
 animals_set = set(animals_dictionary)
 animals_set.add("Lion")
-print(animals_set)
+print(f"{animals_set}")
 
 animals_titles = ["Bee", "Ant", "Fox", "Owl"]
 animals_characteristics = ["busy", "industrious", "sly", "wise"]
